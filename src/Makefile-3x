@@ -48,7 +48,7 @@ MORE_CFLAGS = -DHAVE_CONFIG_H -I. -O2 -D_REENTRANT  \
 CFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
 CXXFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -fno-exceptions -fno-rtti
 
-LIBS = -lpspirkeyb -lSDL_image -lSDL -lpng -ljpeg -lm -lc -lz -lpsphprm -lpspgu -lpsppower -lpspaudio -lpsprtc
+LIBS = -lSDL_image -lSDL -lGL -lpspirkeyb -lpspvfpu -lpsprtc -lpng -ljpeg -lm -lc -lz -lpsphprm -lpspgu -lpsppower -lpspaudio -lpsprtc
 
 BUILD_PRX=1
 
