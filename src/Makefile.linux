@@ -1,0 +1,60 @@
+#
+# Atari800 port on PSP 
+#
+# Copyright (C) 2006 Ludovic Jacomme (ludovic.jacomme@gmail.com)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+TARGET = pspatari.exe
+
+
+SDL_CONFIG = sdl-config
+OBJS =  \
+  antic.o atari.o atari_sdl.o binload.o \
+  cartridge.o cassette.o colours.o compfile.o cpu.o cycle_map.o \
+  devices.o gtia.o input.o log.o memory.o monitor.o  \
+  pbi.o pia.o pokey.o pokeysnd.o remez.o rtime.o screen.o sio.o \
+  statesav.o ui_basic.o ui.o util.o \
+  psp_main.o psp_kbd.o psp_danzeff.o psp_sdl.o psp_font.o \
+  psp_fmgr.o psp_menu.o  psp_menu_kbd.o psp_battery.o psp_menu_set.o \
+  psp_menu_help.o psp_irkeyb.o pspsdk_linux.o 
+
+# mzpokeysnd.o
+
+DEFAULT_CFLAGS = $(shell $(SDL_CONFIG) --cflags) \
+                 -I/usr/include  -I. -Iinclude/ -I./pspsdk_linux
+
+PSPATARI_VERSION=1.1.1
+
+MORE_CFLAGS = -DHAVE_CONFIG_H -I. -g -D_REENTRANT  \
+ -funroll-loops -ffast-math -fomit-frame-pointer \
+ -fno-strength-reduce -finline-functions \
+ -fsingle-precision-constant \
+-DPSP -DLINUX_MODE \
+ -DPSPATARI_VERSION=\"$(PSPATARI_VERSION)\" \
+ -DNO_STDIO_REDIRECT
+
+CFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
+CXXFLAGS = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -fno-exceptions -fno-rtti
+
+LIBS += -L/usr/lib -L/usr/X11R6/lib -lSDL_image -lSDL -lXext -lX11 -lpng -ljpeg -lz -lm -lpthread
+all : $(TARGET)
+
+$(TARGET): $(OBJS)
+	gcc $(CFLAGS) $(OBJS) $(LIBS) -o $(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+

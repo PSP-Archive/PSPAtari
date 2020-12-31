@@ -1,0 +1,8 @@
+Atari800 : Emulator for the 800, 800XL, 130XE and 5200 models of 
+           the Atari personal computer.
+
+  David Firth and Atari800 Development Team 
+
+PSPATARI : Porting on PSP
+
+  Ludovic Jacomme (zx81.zx81@gmail.com)

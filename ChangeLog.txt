@@ -1,0 +1,112 @@
+1.1.3
+
+- fix issue with NTSC colors (thanks to carpy)
+- bug fix with vsync option
+- bug fix with pal/ntsc video system change
+
+1.1.2
+
+- Speed improvements
+- Auto-fire mode, press RTrigger+X to switch it on/off
+  useful for games such as space Xevious !
+  On given games, the auto fire can't be stopped easily
+  (so you might have to disable it several times)
+- Bug fix: settings weren't properly loaded when using 
+  original 5200 menu
+- Add several new hotkeys :
+  . settings such as fps, render mode, auto fire speed
+    can now be directly modified inside the emulator
+    (no need to enter in the settings menu)
+  . quick save / quick load current state
+    (no need to enter in the main menu)
+- Default Hotkeys can now be set in the keyboard mapping menu
+  (useful to add hotkeys on existing/previous keyboard files)
+- Bug fix in the low battery watchdog
+- Add vsync option
+
+1.1.1
+
+- Remove smooth mode (now use only the GU)
+- Add fit height render mode (for zektor)
+- Analog pad can now be used in the file requester
+- Can now be compiled under linux for linux (usefull for dev/debug)
+
+1.1.0
+
+- Major speed improvements in smooth rendering !
+- Compatible with custom firmwares 3.x and PSP-slim
+- Display and save thumbnail images for each save state
+- Add a simple intro splash screen  
+- New speed limiter function
+- Support iso8859-1 fonts in print text functions 
+  (might be useful to translate pspatari menus in german, french ...)
+- IR keyboard support (mainly for menu)
+- Add option to display fps rate
+- Option to prevent the blue led to be displayed when
+  L or R are pressed
+- Bug fix in help menu and in file requester
+
+1.0.7
+
+- A new graphical engine with new smoother render modes !
+  It uses now the PSP GU for rendering, it does not run faster, 
+  but it's a lot smoother !
+  Old "soft" render modes are still available, because there are
+  a bit faster.
+- Save state dates are displayed in the emulator window
+  (it's now easier to identify and to load the right save state slot)
+- Bug fix (load default keyboard mapping on startup)
+
+1.0.6
+
+- Multiple keyboard mapping feature (Thanks to Pou-chan) :
+  You can now toggle between 3 different keyboard mapping using 
+  LTrigger and RTrigger keys
+- Add help menu
+- New background image
+- Bug fix in Rom file requester 
+- Bug fix in screenshots
+- Bug fix in keyboard handler
+
+1.0.5
+
+- Emulator menus reorganisation (new menu for settings)
+- Icons and background images modification (add colors)
+- New feature to save and load a distinct setting file for each games
+- Speed limiter option
+- Delete files option (in the file selector)
+- Speed improvement
+- Screenshots are now saved in PNG format instead of BMP 
+- Bug fix 
+
+1.0.4
+
+- Add beautiful icons designed by Shadow !
+- Modify the UI to be able to use custom background images (transparency)
+- Sleep mode is now working (but only when you're in the emulator window)
+
+1.0.3
+
+- Improve the sound, it's now much more better 
+  (many thanks to Cyphre for his help !)
+- The percent of battery left is now displayed in the emulator window
+- Add a watchdog to automatically return to the emulator menu
+  when  the battery is very low (< 5%)
+- Enter directly in the emulator menu on startup (instead of the ATARI screen)
+- Bug fix in smooth image algorithm (resulting in wrong color display) 
+- Add keyboard change skin option 
+  (you can add your own virtual keyboard images in the graphics directory).
+- Modify the file requester to memorize separately the last 
+  locations/directory of disk image, snapshot, and keyboard 
+  (much more convenient !)
+
+1.0.2
+
+- Sound support 
+- Add various render modes (normal/fit/x1.25 ...)
+- Code cleaning and bug fix
+- New virtual keys
+
+1.0.1
+
+- Intial release
